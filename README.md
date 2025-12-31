@@ -9,9 +9,10 @@
 - 문제 2
   3D Object인 Cube 중심(0, 0, 0)에 생성하고 Geometry Shader의 LineStream를 이용해서 Wireframe으로 출력하시오.<br/>
 
-## 실행 결과 입니다.
+### 실행 결과
 - 문제 1
   <img width="1172" height="1029" alt="결과이미지_문제1" src="https://github.com/user-attachments/assets/3ee5e052-5ada-4c21-8cd0-48685b8cb63b" />
+<br/>
 
 - 문제 2
   <img width="1181" height="1023" alt="결과이미지_문제2" src="https://github.com/user-attachments/assets/b06c96b7-9b60-4145-bb85-78c0ded88557" />
