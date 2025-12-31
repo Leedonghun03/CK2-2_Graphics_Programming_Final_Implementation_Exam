@@ -6,6 +6,7 @@
   Compute Shader를 이용해서 1초 마다 화면이 변화 일어나도록 구현하시오.<br/>
   첫번째 이미지 세로 4등분하여 녹색, 파란색, 빨간색, 흰색 사용<br/>
   두번째 이미지 세로는 4등분, 가로는 2등분 색깔 : 검은색, 파란색, 녹색, 빨간색 사용<br/>
+  <br/>
 - 문제 2<br/>
   3D Object인 Cube 중심(0, 0, 0)에 생성하고 Geometry Shader의 LineStream를 이용해서 Wireframe으로 출력하시오.<br/>
 
