@@ -1,0 +1,74 @@
+#pragma kernel CSMain
+
+RWTexture2D<float4> Result;
+int pattern;
+
+[numthreads(32, 32, 1)]
+void CSMain(uint3 id : SV_DispatchThreadID)
+{
+    uint width, height;
+    Result.GetDimensions(width, height);
+
+    if (id.x >= width || id.y >= height)
+        return;
+
+    float4 green = float4(0, 1, 0, 1);
+    float4 blue = float4(0, 0, 1, 1);
+    float4 red = float4(1, 0, 0, 1);
+    float4 white = float4(1, 1, 1, 1);
+    float4 black = float4(0, 0, 0, 1);
+
+    if (pattern == 0)
+    {
+        uint stripeWidth = width / 4;
+        uint idx = id.x / stripeWidth;
+
+        float4 col = white;
+        if (idx == 0)
+            col = green;
+        else if (idx == 1)
+            col = blue;
+        else if (idx == 2)
+            col = red;
+        else
+            col = white;
+
+        Result[id.xy] = col;
+    }
+    else
+    {
+        uint stripeWidth = width / 4;
+        uint stripeHeight = height / 2;
+
+        uint colIdx = id.x / stripeWidth;
+        uint rowIdx = id.y / stripeHeight;
+
+        float4 col;
+
+        if (rowIdx == 1)
+        {
+            if (colIdx == 0)
+                col = black;
+            else if (colIdx == 1)
+                col = blue;
+            else if (colIdx == 2)
+                col = green;
+            else
+                col = red;
+        }
+        else
+        {
+            if 
+                (colIdx == 0)
+                col = red;
+            else if (colIdx == 1)
+                col = green;
+            else if (colIdx == 2)
+                col = blue;
+            else
+                col = black;
+        }
+
+        Result[id.xy] = col;
+    }
+}
